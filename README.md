@@ -1,2 +1,3 @@
-# ahmad
-UKK aplikasi kalkulator
+#UKK Kalkulator Sederhana
+Nama : Ahmad Azis
+Kelas :Xll RPL 2
