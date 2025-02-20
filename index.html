@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>KALKULATOR</title>
+	<style type="text/css">
+		body{
+			background: black;
+			text-align: center;
+			font-family: Arial, sans-serif;
+		}
+		.kalkulator{
+			width: 250px;
+			background: gold;
+			border-radius: 20px;
+			padding: 20px;
+			margin: 50px auto;
+		}
+		.tampilan{
+			width: 100%;
+			height: 50px;
+			font-size: 18px;
+			text-align: right;
+			border-radius: 20px;
+			background: black;
+			color: white;
+		}
+		.tombol{
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			gap: 5px;
+			margin-top: 20px;
+		}
+		.p{
+			width: 100%;
+			margin: 50px auto;
+			background: red;
+			color: blue;
+			font-size: 18px;
+			border-radius: 20px;
+		}
+		button{
+			width: 100%;
+			height: 50px;
+			padding: 5px;
+			border-radius: 20px;
+		}
+		.hapus{
+			background: red;
+		}
+		.hapus2{
+			background: pink;
+		}
+		.samadengan{
+			background: green;
+		}
+	</style>
+</head>
+<body>
+	<div class="p">Kalkulator Sederhana</div>
+	<div class="kalkulator">
+		<input type="text" class="tampilan" id="tampilan" disabled>
+		<div class="tombol">
+			<button class="hapus" onclick="hapussemua()">C</button>
+			<button class="hapus" onclick="hapussatu()">Del</button>
+			<button class="samadengan" onclick="hitungsemua()">=</button>
+			<button onclick="tambahnilai('+')">+</button>
+
+			<button onclick="tambahnilai('1')">1</button>
+			<button onclick="tambahnilai('2')">2</button>
+			<button onclick="tambahnilai('3')">3</button>
+			<button onclick="tambahnilai('-')">-</button>
+
+			<button onclick="tambahnilai('4')">4</button>
+			<button onclick="tambahnilai('5')">5</button>
+			<button onclick="tambahnilai('6')">6</button>
+			<button onclick="tambahnilai('*')">x</button>
+
+			<button onclick="tambahnilai('7')">7</button>
+			<button onclick="tambahnilai('8')">8</button>
+			<button onclick="tambahnilai('9')">9</button>
+			<button onclick="tambahnilai('/')">/</button>
+			<button onclick="tambahnilai('0')">0</button>
+			<button onclick="tambahnilai('00')">00</button>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function tambahnilai(value) {
+			document.getElementById('tampilan').value+=value;
+		}
+		function hapussemua(){
+			document.getElementById('tampilan').value="";
+		}
+		function hapussatu(){
+			let display = document.getElementById('tampilan');
+			tampilan.value = tampilan.value.slice(0, -1);
+		}
+
+		function hitungsemua() {
+			try{
+				document.getElementById('tampilan').value =
+				eval(document.getElementById('tampilan').value)
+			}catch{
+				alert('input tidak valid')
+			}
+		}
+	</script>
+</body>
+</html>
